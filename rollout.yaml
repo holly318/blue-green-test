@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: rollout-hollybg
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: rollout-hollybg
+  strategy:
+    blueGreen:
+      activeService: rollout-hollybg-active
+      previewService: rollout-hollybg-preview
+  template:
+    metadata:
+      labels:
+        app: rollout-hollybg
+    spec:
+      containers:
+        - image: 'argoproj/rollouts-demo:blue'
+          imagePullPolicy: Always
+          name: rollouts-demo-1.0
+          ports:
+            - containerPort: 8080
