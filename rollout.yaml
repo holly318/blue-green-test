@@ -11,7 +11,7 @@ spec:
   strategy:
     blueGreen:
       activeService: rollout-hollybg-active
-      autoPromotionEnabled: false
+      autoPromotionEnabled: true
       previewService: rollout-hollybg-preview
   template:
     metadata:
