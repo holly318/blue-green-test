@@ -16,6 +16,7 @@ spec:
     metadata:
       labels:
         app: rollout-hollybg
+        release: old
     spec:
       containers:
         - image: 'argoproj/rollouts-demo:blue'
