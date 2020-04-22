@@ -18,8 +18,8 @@ spec:
         app: rollout-hollybg
     spec:
       containers:
-        - image: 'nginx:0.1'
+        - image: 'argoproj/rollouts-demo:green'
           imagePullPolicy: Always
           name: rollouts-demo
           ports:
-            - containerPort: 80
+            - containerPort: 8080
